@@ -27,7 +27,7 @@ public class CameraViewManager extends SimpleViewManager<CameraView> {
     private static Camera camera = null;
     private static int currentCamera = 0;
     private static String flashMode = Camera.Parameters.FLASH_MODE_AUTO;
-    private static String autoFocus = Camera.Parameters.FOCUS_MODE_AUTO;
+    private static String autoFocus = Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO;
     private static Stack<CameraView> cameraViews = new Stack<>();
     private static ThemedReactContext reactContext;
     private static OrientationEventListener orientationListener;
