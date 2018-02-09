@@ -162,6 +162,7 @@ RCT_ENUM_CONVERTER(CKCameraZoomMode, (@{
 #if !(TARGET_IPHONE_SIMULATOR)
         [self setupCaptionSession];
         self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+	self.previewLayer.backgroundColor = [[UIColor blackColor] CGColor];
         [self.layer addSublayer:self.previewLayer];
         self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 #endif
