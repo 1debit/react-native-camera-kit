@@ -27,20 +27,7 @@ public class Capture implements Command {
     }
 
     private void tryTakePicture(final Promise promise) throws Exception {
-        final Camera camera = CameraViewManager.getCamera();
-        Camera.ShutterCallback shutterCallback = new Camera.ShutterCallback() {
-            @Override
-            public void onShutter() {
-                try {
-                    camera.setPreviewCallback(null);
-                    camera.setPreviewTexture(null);
-                } catch (Exception e) {
-                    // ignore
-                }
-            }
-        };
-
-        camera.takePicture(shutterCallback, null, new Camera.PictureCallback() {
+        CameraViewManager.getCamera().takePicture(null, null, new Camera.PictureCallback() {
             @Override
             public void onPictureTaken(byte[] data, Camera camera) {
                 camera.stopPreview();
@@ -49,3 +36,4 @@ public class Capture implements Command {
         });
     }
 }
+
